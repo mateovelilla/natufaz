@@ -11,10 +11,10 @@
 
 </head>
 
-<body>
-    <div class="bg-green h-24">
+<body class="w-full">
+    <div class="bg-green h-24 w-full">
         <header
-            class="absolute inset-x-0 top-0 z-50 h-20 body-font font-source font-bold text-pink flex flex-col sm:w-full flex-wrap w-screen">
+            class="absolute inset-x-0 top-0 z-50 h-20 body-font font-source font-bold text-pink flex flex-col md:w-full flex-wrap w-screen">
             <nav class="flex items-center justify-between p-3 lg:px-8 h-20">
                 <div class="flex justify-center items-center text-2xl pl-8">
                     <a href="#">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </nav>
-    
+
             <div class="hidden" role="dialog" aria-modal="true" id="modal-mobile">
                 <!-- Background backdrop, show/hide based on slide-over state. -->
                 <div class="fixed inset-0 z-50"></div>
@@ -60,8 +60,8 @@
                         </a>
                         <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" id="closeMenu">
                             <span class="sr-only">Close menu</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                aria-hidden="true">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -88,33 +88,99 @@
             </div>
         </header>
     </div>
-    <div class="producto pt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 pb-12 px-8">
-        <div class="galeria">
-            <div class="imagen-principal bg-pink h-96 bg-[url('/imgs/empty-product.png')] sm:12 md:h-36 bg-cover bg-center rounded-lg">
+    <div class="producto pt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 pb-12 px-8 w-full">
+        <div class="galeria xl:flex xl:flex-col xl:justify-center xl:items-center">
+            <div
+                class="imagen-principal bg-pink bg-[url('/imgs/empty-product.png')] h-96 sm:h-96 xl:w-80 bg-cover bg-center rounded-lg">
                 <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
             </div>
             <div class="miniaturas grid gap-x-4 gap-y-4 sm:grid-cols-3 sm:gap-y-4 xl:col-span-1 pt-4 grid-cols-3">
                 <div class="hover:border-2 hover:border-pink h-16">
-                    <a href=""" class="h-full w-full">
-                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full">
+                    <a href=""" class=" h-full w-full">
+                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full w-full">
                     </a>
                 </div>
                 <div class="hover:border-2 hover:border-pink h-16">
-                    <a href=""" class="h-full w-full">
-                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full">
+                    <a href=""" class=" h-full w-full">
+                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full w-full">
                     </a>
                 </div>
                 <div class="hover:border-2 hover:border-pink h-16">
-                    <a href=""" class="h-full w-full">
-                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full">
+                    <a href=""" class=" h-full w-full">
+                        <img src="imgs/empty-product.png" alt="" class="miniatura-1 h-full w-full">
                     </a>
                 </div>
             </div>
         </div>
-        <div class="detalle-producto ">
-            lado
+        <div class="detalle-producto flex flex-col">
+            <p class="text-green font-thin">Inicio > Tienda > Categoria > Producto</p>
+            <h3 class="text-green font-bold pt-4 text-lg pb-2">Nombre Del Producto</h3>
+            <div class="separator border-b-2 border-gray-200 w-14"></div>
+            <h3 class="text-green font-bold pt-4 text-lg pb-2">$15,000</h3>
+            <p class="text-green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis, enim ac tempus
+                congue, sapien ante auctor purus, in maximus ex nulla sed urna.</p>
+            <div class="opciones-producto flex pt-4 w-full items-center">
+                <label for="opciones" class="block text-sm font-medium text-gray-900 sm:w-96">Opciones del producto</label>
+                <select id="opciones"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:pink focus:border-pink block w-full p-2.5 ">
+                    <option selected>Seleccione una opcion</option>
+                    <option value="3">3X2 unidades</option>
+                    <option value="especial">Combo Especial</option>
+                    <option value="6">6X4</option>
+                </select>
+            </div>
+            <div class="flex carrito pt-4">
+                <div class="anexar-carrito sm:w-96">
+                    <a href="#"
+                        class="inline-flex items-center md:px-6 md:py-2 text-sm md:font-medium text-center text-green bg-pink rounded-full hover:bg-green focus:ring-4 focus:outline-none focus:ring-green">
+                        AÑADIR AL CARRITO
+                    </a>
+                </div>
+                <input type="number" id="cantidad"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 "
+                    placeholder="" required>
+            </div>
+            <div class="terminos text-green pt-4">
+                Tener Presenta la Politica de cambios y devoluciones y derecho de retracto
+            </div>
+            <a href="#politica">Consulte aqui</a>
         </div>
     </div>
+    <div class="descripcion px-8">
+        <div class="mb-4 border-b border-gray-200">
+            <ul class="flex flex-wrap -mb-px text-sm font-bold text-center text-green" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:border-pink" id="descripcion-tab" data-tabs-target="#descripcion" type="button" role="tab" aria-controls="descripcion" aria-selected="false">DESCRIPCION</button>
+                </li>
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:border-pink" id="informacion-tab" data-tabs-target="#informacion" type="button" role="tab" aria-controls="informacion" aria-selected="false">INFORMACIÓN ADICIONAL</button>
+                </li>
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:border-pink" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">VALORACIÓN</button>
+                </li>
+            </ul>
+        </div>
+        <div id="tab-content">
+            <div class="text-green">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis, enim ac tempus congue, sapien ante auctor purus, in maximus ex nulla sed urna. Aliquam vel elit ac leo porta lobortis. Maecenas convallis tempor lacus. Proin auctor neque sit amet urna facilisis varius. Quisque et condimentum libero. 
+            </div>
+        </div>
+    </div>
+    <div class="footer bg-gray-200 flex h-32 justify-center items-center w-full mt-12">
+        <div class="flex w-full justify-evenly">
+          <div class="item flex justify-center items-center w-16 border-r-2 border-gray-500 h-4">
+            <a href="#" class="font-sm text-sm/[12px]">Inicio</a>
+          </div>
+          <div class="item flex justify-center items-center w-32 border-r-2 border-gray-500 h-4">
+            <a href="#" class="font-sm text-sm/[12px]">Top 20 productos</a>
+          </div>
+          <div class="item flex justify-center items-center w-24 border-r-2 border-gray-500 h-4">
+            <a href="#" class="font-sm text-sm/[12px]">Promociones</a>
+          </div>
+          <div class="item flex justify-center items-center w-32">
+            <a href="#" class="font-sm text-sm/[12px]">Inicio de sesion</a>
+          </div>
+        </div>
 </body>
 
 </html>
