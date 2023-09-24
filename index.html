@@ -11,7 +11,8 @@
 
 <body>
   <div class="bg-green">
-    <header class="absolute inset-x-0 top-0 z-50 h-20 body-font font-source font-bold text-pink flex flex-col sm:w-full flex-wrap w-screen">
+    <header
+      class="absolute inset-x-0 top-0 z-50 h-20 body-font font-source font-bold text-pink flex flex-col sm:w-full flex-wrap w-screen">
       <nav class="flex items-center justify-between p-3 lg:px-8 h-20">
         <div class="flex justify-center items-center text-2xl pl-8">
           <a href="#">
@@ -21,7 +22,8 @@
         </div>
         <div class="flex lg:hidden">
           <button type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 text-pink" id="openMenu">
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 text-pink"
+            id="openMenu">
             <span class="sr-only">menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
@@ -107,6 +109,55 @@
       </div>
     </div>
   </div>
+  <div class="bg-pink">
+    <div class="flex p-12 flex-col">
+      <div class="caracteristicas grid gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-y-12 xl:col-span-2 pb-12">
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-check text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Calidad Certificada</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Somos compradores directos de la industria naturista lo cual
+            certifica validez y confianza en cada uno de nuestros productos
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-chart-histogram text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Mejores precios del mercado</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Ya que trabajamos con los proveedores directamente manejamos
+            los mejores precios de la industria
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-rocket-lunch text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Entrega inmediata</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Cubrimmos cada rincon del pais para hacerte llegar los mejores productos
+            de nuestro stand
+          </p>
+        </div>
+      </div>
+      <div class="pagos grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 pb-6">
+        <div class="experiencia flex flex-col items-center justify-center">
+          <h3 class="text-green font-semibold text-lg pb-6">Vive con nosotros la experiencia de tener nuestros productos a la mano</h3>
+          <p class="text-green text-xs">
+            Nos encargamos de todo el proceso de entrega y confirmacion de los productos por ti.
+            Recibimos todo tipo de fuentes bancarias para el pago de los productos
+          </p>
+        </div>
+        <div class="tarjeta-credito flex items-center justify-start">
+          <img src="/imgs/card.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="scripts/index.js"></script>
+
 </html>
