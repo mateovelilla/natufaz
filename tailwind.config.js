@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         pink: "#F5CAC3",
         green: "#84A59D",
-        white: "#F7EDE2"
+        whiteMof: "#F7EDE2"
       },
       fontFamily: {
         source: ["'Source Sans 3'"],
