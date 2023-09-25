@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Source Sans 3' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="dist/output.css" rel="stylesheet">
+    <title>Panel de control</title>
+</head>
+<body class="box-content">
+    <div class="flex">
+        <div class="hidden bg-green col-span-2 pt-24 lg:flex flex-col items-center p-12">
+            <h3 class="text-whiteMof pb-4">CRUD DE OPERACIONES</h3>
+            <div class="bg-pink rounded-full h-32 w-32 flex items-center justify-center">
+                <img src="/imgs/employee-2.png" class="object-fill rounded-full" alt="">
+            </div>
+            <h3 class="text-whiteMof font-bold pt-4"> Pedro Gonzales</h3>
+            <p class="text-whiteMof">Admin</p>
+            <div class="menu h-full w-full pt-4">
+                <ul class="flex flex-col items-center h-96 w-full flex flex-col justify-evenly">
+                    <li class="">
+                        
+                        <button class=" hover:bg-pink hover:rounded-lg px-12 py-2">
+                            <i class="fi fi-rr-home pr-4"></i>
+                            inicio
+                        </button>
+                    </li>
+                    <li class="">
+                        <button class=" hover:bg-pink hover:rounded-lg px-12 py-2">
+                            <i class="fi fi-rr-coins pr-4"></i>
+                            Pagos
+                        </button>
+                    </li>
+                    <li class="">
+                        <button class=" hover:bg-pink hover:rounded-lg px-12 py-2">
+                            <i class="fi fi-rr-stats pr-4"></i>
+                            Reportes
+                        </button>
+                    </li>
+                    <li class="">
+                        <button class=" hover:bg-pink hover:rounded-lg px-12 py-2">
+                            <i class="fi fi-rr-settings pr-4"></i>
+                            Configuraciones
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-12 h-screen w-screen bg-white flex flex-col justify-center items-start">
+            <h3 class="text-black font-bold pb-4">Lista de productos</h3>
+            <hr class="bg-gray-500 w-full h-0">
+            <div class="table w-full">
+                <div class="table-header sm:flex hidden justify-between">
+                    <p class="w-12"></p>
+                    <p class="text-gray-400 w-16">Producto</p>
+                    <p class="text-gray-400 w-12">Precio</p>
+                    <p class="text-gray-400 w-24">Unidades Disponibles</p>
+                    <p class="w-28 text-gray-400"></p>
+                </div>
+                <div class="table-body w-full pt-6 pr-12">
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                        <img src="/imgs/empty-product.png" class="w-12 h-12 rounded-lg hidden sm:block">
+                        <p class="text-gray-500 w-16">Nombre</p>
+                        <p class="text-gray-500 w-12 hidden sm:block">$9.99</p>
+                        <p class="text-gray-500 w-24 hidden sm:block">20</p>
+                        <div class="buttons w-28 flex justify-center text-pink">
+                            <button><i class="fi fi-rr-edit pr-4"></i></button>
+                            <button><i class="fi fi-rr-trash pr-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-footer w-full">
+                    <nav aria-label="Page navigation" class="w-full ">
+                        <ul class="flex -space-x-px text-sm w-full justify-center pr-12">
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-pink bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700"><</a>
+                          </li>
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-pink bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
+                          </li>
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-pink bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
+                          </li>
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 text-pink border border-gray-300 hover:bg-blue-100 hover:text-gray-200">3</a>
+                          </li >
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-pink bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
+                          </li>
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-pink bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
+                          </li>
+                          <li class="sm:w-16">
+                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-pink bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">></a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
