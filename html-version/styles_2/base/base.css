@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after{ /* Reset css*/
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+:root {
+    --primary-color: #F5CAC3;
+    --secondary-color: #84A59D;
+    --third-color: #F7EDE2;
+}
+html {
+    background-color: var(--third-color);
+    height: 100%;
+    width: 100%;
+}
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: rebeccapurple;
+}
+.container {
+    display: grid; 
+    grid-template-columns: 2.4fr; 
+    grid-template-rows: 0.4fr 1.3fr 1.5fr 1.6fr 0.9fr 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "."
+      "."
+      "."
+      "."
+      "."
+      ".";
+    > * {
+        border-color: #F5CAC3;
+        border: #84A59D solid;
+    }
+}

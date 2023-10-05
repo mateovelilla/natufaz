@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Source Sans 3' rel='stylesheet'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg-green">
+    <header
+      class="absolute inset-x-0 top-0 z-50 h-20 body-font font-source font-bold text-pink flex flex-col sm:w-full flex-wrap w-screen">
+      <nav class="flex items-center justify-between p-3 lg:px-8 h-20">
+        <div class="flex justify-center items-center text-2xl pl-8">
+          <a href="#">
+            <i class="fi fi-rr-shop"></i>
+            natufaz
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 text-pink"
+            id="openMenu">
+            <span class="sr-only">menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12 pr-4">
+          <div class="item w-32  flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
+            <a href="#" class="text-sm">Inicio</a>
+          </div>
+          <div class="item w-32 flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
+            <a href="#" class="text-sm">Top 20 productos</a>
+          </div>
+          <div class="item w-32 flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
+            <a href="#" class="text-sm">Promociones</a>
+          </div>
+          <div class="item w-32 flex justify-center items-center h-10">
+            <a href="/inicio-sesion.html" class="text-sm">Inicio de sesion</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hidden" role="dialog" aria-modal="true" id="modal-mobile">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-whiteMof px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" id="closeMenu">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Top
+                  20 productos</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Promociones</a>
+              </div>
+              <div class="py-6">
+                <a href="/inicio-sesion.html"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio
+                  de sesion</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <div class="isolate px-6 pt-14 lg:px-8 sm:px-20 md:w-full">
+      <div class="flex items-center sm:w-38 w-full h-full md:mx-0 py-28 lg:pt-56 sm:py-12">
+        <div class="slogan flex sm:w-6/12 w-full sm:items-center">
+          <div class="title">
+            <h3 class="text-pink font-source font-bold text-pink text-4xl">
+              La mejor tienda naturista a
+              <br>
+              los mejores precios
+            </h3>
+            <p class="mt-4 text-pink tex-bold text-source">
+              Proveemos los mejores productos naturistas a los
+              mejores precios.
+            </p>
+          </div>
+          <div class="subtitle"></div>
+        </div>
+        <div class="banner lg:flex w-6/12 md:w-full hidden h-full">
+          <img class="lg:w-2/6 relative z-10 left-16 xl:left-32" src="/imgs/employee-1.png" alt="">
+          <img class="lg:w-2/6 relative lg:right-4 xl:right-18 right-12 top-4 z-0" src="/imgs/employee-2.png" alt="">
+          <img class="lg:w-2/6 relative z-20 lg:right-48 xl:right-72" src="/imgs/employee-3.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-pink">
+    <div class="flex p-12 flex-col">
+      <div class="caracteristicas grid gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-y-12 xl:col-span-2 pb-12">
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-check text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Calidad Certificada</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Somos compradores directos de la industria naturista lo cual
+            certifica validez y confianza en cada uno de nuestros productos
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-chart-histogram text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Mejores precios del mercado</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Ya que trabajamos con los proveedores directamente manejamos
+            los mejores precios de la industria
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="bg-green flex h-14 w-14 rounded-lg flex items-center justify-center">
+            <i class="fi fi-rr-rocket-lunch text-pink"></i>
+          </span>
+          <h3 class="text-green font-medium">Entrega inmediata</h3>
+          <p class="text-green text-sm text-center pt-2">
+            Cubrimmos cada rincon del pais para hacerte llegar los mejores productos
+            de nuestro stand
+          </p>
+        </div>
+      </div>
+      <div class="pagos grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 pb-6">
+        <div class="experiencia flex flex-col items-center justify-center">
+          <h3 class="text-green font-semibold text-lg pb-6">Vive con nosotros la experiencia de tener nuestros productos
+            a la mano</h3>
+          <p class="text-green text-xs">
+            Nos encargamos de todo el proceso de entrega y confirmacion de los productos por ti.
+            Recibimos todo tipo de fuentes bancarias para el pago de los productos
+          </p>
+        </div>
+        <div class="tarjeta-credito flex items-center justify-start">
+          <img src="/imgs/card.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="top-20-productos flex items-center p-12 flex-col">
+    <h3 class="titulo pb-4 font-bold">
+      Top 20 Productos
+    </h3>
+    <div class="productos grid gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-y-12 xl:col-span-2 pb-12">
+      <!-- Lista de productos -->
+
+
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+        <a href="/detalle.html">
+          <div class="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
+            <span class="bg-pink px-4 text-whiteMof rounded-l-lg">Promoción</span>
+          </div>
+          <div class="content-card pl-2 pr-20 pb-12">
+            <h3 class="w-full tex-bold text-lg">Nombre del producto</h3>
+            <p>$9.99</p>
+          </div>
+        </a>
+      </div>
+
+
+      <!-- Fin de la lista de productos -->
+    </div>
+    <div class="ver-mas">
+      <a href="#"
+        class="inline-flex items-center px-6 py-2 text-sm font-medium text-center text-green bg-pink rounded-full hover:bg-green focus:ring-4 focus:outline-none focus:ring-green">
+        ver mas
+      </a>
+    </div>
+  </div>
+
+  <div class="footer bg-gray-200 flex h-32 justify-center items-center w-full">
+    <div class="flex w-full justify-evenly">
+      <div class="item flex justify-center items-center w-16 border-r-2 border-gray-500 h-4">
+        <a href="#" class="font-sm text-sm/[12px]">Inicio</a>
+      </div>
+      <div class="item flex justify-center items-center w-32 border-r-2 border-gray-500 h-4">
+        <a href="#" class="font-sm text-sm/[12px]">Top 20 productos</a>
+      </div>
+      <div class="item flex justify-center items-center w-24 border-r-2 border-gray-500 h-4">
+        <a href="#" class="font-sm text-sm/[12px]">Promociones</a>
+      </div>
+      <div class="item flex justify-center items-center w-32">
+        <a href="/inicio-sesion.html" class="font-sm text-sm/[12px]">Inicio de sesion</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="scripts/index.js"></script>
+
+</html>
