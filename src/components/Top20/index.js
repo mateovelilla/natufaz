@@ -54,7 +54,7 @@ export function Top20 () {
             {
                 products.map(
                     product =><div className="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
-                        <a href="/detalle.html">
+                        <a href="/detail">
                             <div className="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
                                 {
                                 product.isPromotion?
