@@ -23,7 +23,7 @@ export function Header() {
         >
             <nav className="flex items-center justify-between p-3 lg:px-8 h-20">
                 <div className="flex justify-center items-center text-2xl pl-8">
-                    <a href="#">
+                    <a href="/">
                         <i className="fi fi-rr-shop pr-2"></i>
                         Natufaz
                     </a>
@@ -65,7 +65,7 @@ export function Header() {
                         <a href="/" className="text-sm">Inicio</a>
                     </div>
                     <div className="item w-32 flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
-                        <a href="#" className="text-sm">Top 20 productos</a>
+                        <a href="#top-20-productos" className="text-sm">Top 20 productos</a>
                     </div>
                     <div className="item w-32 flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
                         <a href="#" className="text-sm">Promociones</a>
@@ -119,7 +119,7 @@ export function Header() {
                                         hover:bg-gray-50
                                     "
                                 >Inicio</a>
-                                <a href="#"
+                                <a href="#top-20-productos"
                                     className="
                                         -mx-3
                                         block

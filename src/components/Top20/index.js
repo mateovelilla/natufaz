@@ -55,7 +55,7 @@ export function Top20 () {
             price: "9.99"
         }
     ]
-    return <div className="top-20-productos flex items-center p-12 flex-col">
+    return <div id="top-20-productos" className="flex items-center p-12 flex-col">
         <h3 className="titulo pb-4 font-bold">
             Top 20 Productos
         </h3>
