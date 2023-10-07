@@ -62,7 +62,7 @@ export function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     <div className="item w-32  flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
-                        <a href="#" className="text-sm">Inicio</a>
+                        <a href="/" className="text-sm">Inicio</a>
                     </div>
                     <div className="item w-32 flex justify-center items-center border-r-4 border-whiteMof-500 h-10">
                         <a href="#" className="text-sm">Top 20 productos</a>
@@ -71,7 +71,7 @@ export function Header() {
                         <a href="#" className="text-sm">Promociones</a>
                     </div>
                     <div className="item w-32 flex justify-center items-center h-10">
-                        <a href="/inicio-sesion.html" className="text-sm">Inicio de sesion</a>
+                        <a href="/login" className="text-sm">Inicio de sesion</a>
                     </div>
                 </div>
             </nav>
@@ -105,7 +105,7 @@ export function Header() {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
-                                <a href="#"
+                                <a href="/"
                                     className="
                                         -mx-3
                                         block
@@ -147,7 +147,7 @@ export function Header() {
                                     ">Promociones</a>
                             </div>
                             <div className="py-6">
-                                <a href="/inicio-sesion.html"
+                                <a href="/login"
                                     className="
                                         -mx-3
                                         block

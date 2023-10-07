@@ -34,7 +34,7 @@ export default function Detail() {
           <p className="text-green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis, enim ac tempus
             congue, sapien ante auctor purus, in maximus ex nulla sed urna.</p>
           <div className="opciones-producto flex pt-4 w-full items-center">
-            <label for="opciones" className="block text-sm font-medium text-gray-900 sm:w-96">Opciones del producto</label>
+            <label htmlFor="opciones" className="block text-sm font-medium text-gray-900 sm:w-96">Opciones del producto</label>
             <select id="opciones"
               className="
                   bg-gray-50
@@ -50,7 +50,7 @@ export default function Detail() {
                   p-2.5
                   "
             >
-              <option selected>Seleccione una opcion</option>
+              <option>Seleccione una opcion</option>
               <option value="3">3X2 unidades</option>
               <option value="especial">Combo Especial</option>
               <option value="6">6X4</option>

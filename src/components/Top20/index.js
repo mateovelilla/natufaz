@@ -1,46 +1,55 @@
 export function Top20 () {
     const products = [
         {
+            index: 1,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 2,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 3,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 4,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 5,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 6,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 7,
             isPromotion:false,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 8,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
         },
         {
+            index: 9,
             isPromotion:true,
             name: "Acido antinflamatorio",
             price: "9.99"
@@ -53,7 +62,7 @@ export function Top20 () {
         <div className="productos grid gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-y-12 xl:col-span-2 pb-12">
             {
                 products.map(
-                    product =><div className="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink">
+                    product =><div className="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink" key={product.index}>
                         <a href="/detail">
                             <div className="header-card bg-[url('/imgs/empty-product.png')] h-36 bg-cover rounded-lg">
                                 {
