@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Payment } from "@/components/Payment";
 
 export default async function Home() {
-  const res = await fetch(process.env.URL_SERVER + "/products")
-  const { products } = await res.json()
-  console.log('Products', products)
+  // const res = await fetch(process.env.URL_SERVER + "/products")
+  // const { products } = await res.json()
+  console.log('Products', process.env.URL_SERVER + "/products")
   return (
     <main>
       <div className='bg-green'>
