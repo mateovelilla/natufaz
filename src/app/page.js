@@ -7,6 +7,7 @@ import { Payment } from "@/components/Payment";
 export default async function Home() {
   const res = await fetch(process.env.URL_SERVER + "/products")
   const { products } = await res.json()
+  console.log('Products', products)
   return (
     <main>
       <div className='bg-green'>
