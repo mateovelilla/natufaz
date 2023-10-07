@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Aceite De Canela",
+        "description": "El agradable aroma que caracteriza al aceite de canela permite que sea ideal para perfumar la piel.",
+        "price": 25.050,
+        "isPromotion": true,
+        "images": [
+            "/products/aceite_canela/MONTAJE_ACEITE-DE-CANELA.webp",
+            "/products/aceite_canela/aceite-canela2.webp"
+        ],
+        "options": [
+            {
+                "key": "10 Ml",
+                "value": "3"
+            }
+        ]
+    }
+]

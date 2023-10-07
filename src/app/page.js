@@ -3,7 +3,10 @@ import { Banner } from "@/components/Banner"
 import { Top20 } from "@/components/Top20";
 import { Footer } from "@/components/Footer";
 import { Payment } from "@/components/Payment";
-export default function Home() {
+
+export default async function Home() {
+  const res = await fetch(process.env.URL_SERVER + "/products")
+  const { products } = await res.json()
   return (
     <main>
       <div className='bg-green'>
@@ -11,7 +14,7 @@ export default function Home() {
         <Banner/>
       </div>
       <Payment/>
-      <Top20/>
+      <Top20 products={products}/>
       <Footer/>
     </main>
   )
