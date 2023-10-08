@@ -1,10 +1,10 @@
 "use client"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-
-
+import { useRouter } from 'next/navigation'
 
 export default function Admin() {
+    const router = useRouter()
     const [ products, setProduct ] = useState(null)
     useEffect(()=>{
         const getProducts = async function () {
@@ -16,6 +16,10 @@ export default function Admin() {
             getProducts()
         }
     },[])
+    const closeSesionHandler = () => {
+        sessionStorage.removeItem("accessToken")
+        router.replace("/login")
+    }
     return (
         <div className="box-content flex">
             <div className="hidden bg-green col-span-2 pt-24 lg:flex flex-col items-center p-12">
@@ -28,10 +32,10 @@ export default function Admin() {
                 <div className="menu h-full w-full pt-4">
                     <ul className="flex flex-col items-center h-96 w-full flex flex-col justify-evenly">
                         <li>
-                            <button className=" hover:bg-pink hover:rounded-lg px-12 py-2">
+                            <a className=" hover:bg-pink hover:rounded-lg px-12 py-2" href="/">
                                 <i className="fi fi-rr-home pr-4"></i>
                                 inicio
-                            </button>
+                            </a>
                         </li>
                         <li>
                             <button className=" hover:bg-pink hover:rounded-lg px-12 py-2">
@@ -49,6 +53,12 @@ export default function Admin() {
                             <button className=" hover:bg-pink hover:rounded-lg px-12 py-2">
                                 <i className="fi fi-rr-settings pr-4"></i>
                                 Configuraciones
+                            </button>
+                        </li>
+                        <li >
+                            <button className=" hover:bg-pink hover:rounded-lg px-12 py-2" onClick={()=>closeSesionHandler()}>
+                                <i className="fi fi-rr-exit pr-4"></i>
+                                Cerrar Sesion
                             </button>
                         </li>
                     </ul>

@@ -1,10 +1,16 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from 'next/navigation'
 export default function Login() {
     const router = useRouter()
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("")
+    useEffect(() => {
+        const session = sessionStorage.getItem("accessToken")
+        if(session) {
+            router.replace(`/admin`)
+        }
+    },[])
     const loginHandler = async (event) => {
         event.preventDefault()
         const res = await fetch("/users", {
@@ -44,7 +50,7 @@ export default function Login() {
                                     className="peer-focus:font-medium absolute text-sm text-pink duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-pink peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Usuario</label>
                             </div>
                             <div className="relative z-0 w-full mb-6 group">
-                                <input type="text" className="block py-2.5 px-0 w-full text-sm text-pink bg-transparent border-0 border-b-2 border-pink appearance-none focus:outline-none focus:ring-0 focus:border-pink peer"
+                                <input type="password" className="block py-2.5 px-0 w-full text-sm text-pink bg-transparent border-0 border-b-2 border-pink appearance-none focus:outline-none focus:ring-0 focus:border-pink peer"
                                     placeholder=" " required defaultValue={password} onChange={({target})=>setPassword(target.value)}/>
                                 <label htmlFor="floating_email"
                                     className="peer-focus:font-medium absolute text-sm text-pink duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-pink peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>

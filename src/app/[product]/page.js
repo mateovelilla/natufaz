@@ -26,8 +26,8 @@ export default function Product({ params }) {
         !product || !Object.keys(product).length ? "" :
           <div className="pt-48 grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 pb-12 px-8 w-full">
             <div className="galeria xl:flex xl:flex-col xl:justify-center xl:items-center">
-              <div className="imagen-principal bg-pink h-96 sm:h-96 xl:w-80 bg-cover bg-center rounded-lg flex justify-center relative">
-                <Image src={currentImge} width={600} height={600} className="object-cover z-10" />
+              <div className="imagen-principal h-96 sm:h-96 xl:w-80 bg-cover bg-center rounded-lg flex justify-center relative">
+                <Image src={currentImge} width={400} height={400} className="object-cover z-10" />
                 {
                   product.isPromotion ?
                     <span className="bg-pink px-4 text-whiteMof rounded-l-lg z-20 absolute left-0">Promoción</span> : ""
