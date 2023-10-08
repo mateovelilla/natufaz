@@ -8,7 +8,7 @@ export function Top20 ({products}) {
             {
                 products.map(
                     (product,index) =><div className="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink" key={index}>
-                        <a href="/detail">
+                        <a href={`/${product.id}`}>
                             <div className="header-card h-36 bg-cover rounded-lg flex justify-center relative">
                                 <Image src={product.images[0]} width={400} height={400} className="object-contain z-10"/>
                                 {

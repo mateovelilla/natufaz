@@ -1,5 +1,21 @@
+"use client"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+
+
+
 export default function Admin() {
+    const [ products, setProduct ] = useState(null)
+    useEffect(()=>{
+        const getProducts = async function () {
+            const res = await fetch('/products')
+            const {products: productsToSet} = await res.json()
+            setProduct(productsToSet)
+        }
+        if(!products) {
+            getProducts()
+        }
+    },[])
     return (
         <div className="box-content flex">
             <div className="hidden bg-green col-span-2 pt-24 lg:flex flex-col items-center p-12">
@@ -43,73 +59,28 @@ export default function Admin() {
             <hr className="bg-gray-500 w-full h-0"/>
             <div className="table w-full">
                 <div className="table-header sm:flex hidden justify-between">
-                    <p classclassName="w-12"></p>
+                    <p className="w-12"></p>
                     <p className="text-gray-400 w-16">Producto</p>
                     <p className="text-gray-400 w-12">Precio</p>
                     <p className="text-gray-400 w-24">Unidades Disponibles</p>
                     <p className="w-28 text-gray-400"></p>
                 </div>
                 <div className="table-body w-full pt-6 pr-12">
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block" width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
+                    {
+                        !products ? 'Loading':
+                        products.map(product => (
+                            <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
+                            <Image src={product.images[0]} className="w-12 h-12 rounded-lg hidden sm:block" width={500} height={500}/>
+                            <p className="text-gray-500 w-16">{product.name}</p>
+                            <p className="text-gray-500 w-12 hidden sm:block">${product.price}</p>
+                            <p className="text-gray-500 w-24 hidden sm:block">20</p>
+                            <div className="buttons w-28 flex justify-center text-pink">
+                                <button><i className="fi fi-rr-edit pr-4"></i></button>
+                                <button><i className="fi fi-rr-trash pr-4"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block" width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
-                        </div>
-                    </div>
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block"  width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
-                        </div>
-                    </div>
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block"  width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
-                        </div>
-                    </div>
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block"  width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
-                        </div>
-                    </div>
-                    <div className="bg-gray-200 rounded-lg flex justify-between items-center p-2 shadow shadow-sm mb-4">
-                        <Image src="/empty-product.png" className="w-12 h-12 rounded-lg hidden sm:block"  width={500} height={500}/>
-                        <p className="text-gray-500 w-16">Nombre</p>
-                        <p className="text-gray-500 w-12 hidden sm:block">$9.99</p>
-                        <p className="text-gray-500 w-24 hidden sm:block">20</p>
-                        <div className="buttons w-28 flex justify-center text-pink">
-                            <button><i className="fi fi-rr-edit pr-4"></i></button>
-                            <button><i className="fi fi-rr-trash pr-4"></i></button>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
                 <div className="table-footer w-full">
                     <nav aria-label="Page navigation" className="w-full ">
