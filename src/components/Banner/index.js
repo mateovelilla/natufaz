@@ -19,11 +19,11 @@ export function Banner() {
                 </div>
                 <div className="banner lg:flex w-6/12 md:w-full hidden h-full">
                     <Image className="lg:w-2/6 relative z-10 left-16 xl:left-32" src="/employee-1.png" width={500}
-                        height={500} />
+                        height={500} alt="employee"/>
                     <Image className="lg:w-2/6 relative lg:right-4 xl:right-18 right-12 top-4 z-0" src="/employee-2.png" width={500}
-                        height={500} />
+                        height={500} alt="employee"/>
                     <Image className="lg:w-2/6 relative z-20 lg:right-48 xl:right-72" src="/employee-3.png" width={500}
-                        height={500} />
+                        height={500} alt="employee"/>
 
                 </div>
             </div>

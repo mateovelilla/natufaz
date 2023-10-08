@@ -1,8 +1,11 @@
 'use client'
-import { useState } from "react";
-export function Header() {
+import { useEffect, useState } from "react";
+export function Header({cart = []}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    const [counterProducts, setCounterProducts] = useState(0)
+    useEffect(()=>{
+        setCounterProducts(cart.reduce((sum,element)=> sum + element.counter, 0))
+    },[cart])
     return (
         <header
             className="
@@ -73,6 +76,12 @@ export function Header() {
                     <div className="item w-32 flex justify-center items-center h-10">
                         <a href="/login" className="text-sm">Inicio de sesion</a>
                     </div>
+                    <div className="item w-32 flex justify-center items-center h-10 relative">
+                        <a href="/login" className="text-sm">
+                            <i className="fi fi-rr-shopping-cart"></i>
+                            <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-pink border-1 border-white rounded-full -top-2 dark:border-gray-900">{counterProducts}</div>
+                        </a>
+                    </div>
                 </div>
             </nav>
             <div className={!mobileMenuOpen ? "hidden" : ""} role="dialog" aria-modal="true" onClick={() => setMobileMenuOpen(false)}>
@@ -102,9 +111,26 @@ export function Header() {
                             </svg>
                         </button>
                     </div>
-                    <div className="mt-6 flow-root">
+                    <div className="mt-6 flow-root ">
                         <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
+                            <div className="space-y-2 py-6 flex flex-col justify-content items-center">
+                                <a href="/login"
+                                    className="
+                                        -mx-3
+                                        block
+                                        rounded-lg
+                                        px-3
+                                        py-2
+                                        text-base
+                                        font-semibold
+                                        leading-7
+                                        text-gray-900
+                                        hover:bg-gray-50
+                                        relative
+                                    ">
+                                    <i className="fi fi-rr-shopping-cart"></i>
+                                    <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-pink border-1 border-white rounded-full -top-2 dark:border-gray-900">{counterProducts}</div>
+                                </a>
                                 <a href="/"
                                     className="
                                         -mx-3
@@ -146,7 +172,7 @@ export function Header() {
                                     hover:bg-gray-50
                                     ">Promociones</a>
                             </div>
-                            <div className="py-6">
+                            <div className="py-6 flex justify-items-center">
                                 <a href="/login"
                                     className="
                                         -mx-3
@@ -159,7 +185,7 @@ export function Header() {
                                         leading-7
                                         text-gray-900
                                         hover:bg-gray-50
-                                    ">Iniciode sesion</a>
+                                    ">Inicio de sesion</a>
                             </div>
                         </div>
                     </div>

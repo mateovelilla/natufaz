@@ -10,7 +10,7 @@ export function Top20 ({products}) {
                     (product,index) =><div className="max-w-sm p-0 bg-white border border-black rounded-lg shadow hover:border-pink" key={index}>
                         <a href={`/${product.id}`}>
                             <div className="header-card h-36 bg-cover rounded-lg flex justify-center relative">
-                                <Image src={product.images[0]} width={400} height={400} className="object-contain z-10"/>
+                                <Image src={product.images[0]} width={400} height={400} className="object-contain z-10" alt="product"/>
                                 {
                                     product.isPromotion?
                                     <span className="bg-pink px-4 text-whiteMof rounded-l-lg z-20 absolute left-0">Promoción</span>: ""

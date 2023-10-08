@@ -43,7 +43,7 @@ export function Payment () {
                     </p>
                 </div>
                 <div className="tarjeta-credito flex items-center justify-start">
-                    <Image src="/card.png" alt="" width={500} height={500}/>
+                    <Image src="/card.png" alt="card" width={500} height={500} />
                 </div>
             </div>
         </div>
