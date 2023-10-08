@@ -1,11 +1,29 @@
 'use client'
 import { useEffect, useState } from "react";
-export function Header({cart = []}) {
+import Image from "next/image";
+export function Header({ cart = [] }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [counterProducts, setCounterProducts] = useState(0)
-    useEffect(()=>{
-        setCounterProducts(cart.reduce((sum,element)=> sum + element.counter, 0))
-    },[cart])
+    const [cartMenu, setCartMenu] = useState(false)
+    const [subtotal, setSubtotal] = useState(0);
+    const [cartProvided, setCartProvided] = useState([])
+    useEffect(() => {
+        setCounterProducts(cart.reduce((sum, element) => sum + element.counter, 0))
+        setSubtotal(calculate(cart))
+        setCartProvided(cart)
+    }, [cart])
+    const calculate = (products)=> {
+        return products.reduce((tempSum,item)=> tempSum + (item.price * item.counter),0)
+    }
+    const removeItemHandler = (id) => {
+        const cart = sessionStorage.getItem("cart");
+        const cartFormated = JSON.parse(cart)
+        const newCart = cartFormated.filter(item=> item.id !== id )
+        setCartProvided(newCart)
+        setSubtotal(calculate(newCart))
+        setCounterProducts(newCart.reduce((sum, element) => sum + element.counter, 0))
+        sessionStorage.setItem("cart",newCart)
+    }
     return (
         <header
             className="
@@ -77,10 +95,10 @@ export function Header({cart = []}) {
                         <a href="/login" className="text-sm">Inicio de sesion</a>
                     </div>
                     <div className="item w-32 flex justify-center items-center h-10 relative">
-                        <a href="/login" className="text-sm">
+                        <button onClick={() => setCartMenu(true)} className="text-sm">
                             <i className="fi fi-rr-shopping-cart"></i>
                             <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-pink border-1 border-white rounded-full -top-2 dark:border-gray-900">{counterProducts}</div>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -114,7 +132,7 @@ export function Header({cart = []}) {
                     <div className="mt-6 flow-root ">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6 flex flex-col justify-content items-center">
-                                <a href="/login"
+                                <button onClick={() => setCartMenu(true)}
                                     className="
                                         -mx-3
                                         block
@@ -130,7 +148,7 @@ export function Header({cart = []}) {
                                     ">
                                     <i className="fi fi-rr-shopping-cart"></i>
                                     <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-pink border-1 border-white rounded-full -top-2 dark:border-gray-900">{counterProducts}</div>
-                                </a>
+                                </button>
                                 <a href="/"
                                     className="
                                         -mx-3
@@ -186,6 +204,92 @@ export function Header({cart = []}) {
                                         text-gray-900
                                         hover:bg-gray-50
                                     ">Inicio de sesion</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div role="dialog" aria-modal="true" className={!cartMenu ? "hidden" : ""}>
+                <div className="fixed inset-0 z-50"></div>
+                <div
+                    className="
+                        fixed
+                        inset-y-0
+                        right-0
+                        z-50
+                        w-full
+                        overflow-y-auto
+                        bg-white
+                        px-6
+                        py-6
+                        sm:max-w-sm
+                        sm:ring-1
+                        sm:ring-gray-900/10"
+                >
+
+                    <div className="mt-6 flow-root ">
+                        <div className="-my-6 divide-y divide-gray-500/10">
+                            <div className="flex items-center justify-start">
+                                <a href="#" className="-m-1.5 p-1.5"></a>
+                                <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setCartMenu(false)}>
+                                    <span className="sr-only">Close menu</span>
+                                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+                                        aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className="space-y-2 py-6 flex flex-col justify-content items-center">
+                                {
+                                    cartProvided.map((item, index) => {
+                                        return (
+                                            <div className="element flex w-full" key={index}>
+                                                <div className="image">
+                                                    <Image src={item.images[0]} width={100} height={100} alt="product" ></Image>
+                                                </div>
+                                                <div className="ml-4 flex flex-1 flex-col">
+                                                    <div>
+                                                        <div className="flex justify-between text-base text-black">
+                                                            <h3>
+                                                                <a href="#">{item.name}</a>
+                                                            </h3>
+                                                            <p className="ml-4 text-black">${item.price}</p>
+                                                        </div>
+                                                        <p className="mt-1 text-sm text-black">{
+                                                            item.options.find(option => option.value == item.optionSelected).key
+                                                        }</p>
+                                                    </div>
+                                                    <div className="flex flex-1 items-end justify-between text-sm">
+                                                        <p className="text-gray-500">Qty {item.counter}</p>
+
+                                                        <div className="flex">
+                                                            <button type="button" className="font-medium text-green bg-pink w-20 rounded-lg hover:text-pink hover:bg-green" onClick={()=>removeItemHandler(item.id)}>Remove</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                            <div className="py-6 flex justify-items-center">
+                                <a href="/login"
+                                    className="
+                                        -mx-3
+                                        block
+                                        rounded-lg
+                                        px-3
+                                        py-2.5
+                                        text-base
+                                        font-semibold
+                                        leading-7
+                                        text-gray-900
+                                        hover:bg-gray-50
+                                    ">Subtotal: {subtotal}</a>
                             </div>
                         </div>
                     </div>
